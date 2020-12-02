@@ -2,6 +2,8 @@ require 'sinatra'
 require 'open-uri'
 require 'json'
 
+Rack::Utils.key_space_limit = 100000000
+
 system("ngrok http #{9494} > /dev/null &", out: $stdout, err: :out)
 
 tries = 0
