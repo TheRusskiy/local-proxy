@@ -12,7 +12,7 @@ set :port, 9494
 
 begin
   ngrok_tunnels = JSON.parse(URI.open("http://127.0.0.1:4040/api/tunnels").read)
-  puts ngrok_tunnels['tunnels'].find {|t| t['proto'] == 'http' }['public_url']
+  puts ngrok_tunnels['tunnels'].find {|t| t['proto'] == 'https' }['public_url']
 rescue
   tries += 1
   sleep(1)
